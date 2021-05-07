@@ -1,14 +1,14 @@
 # TODO API
 
 ## Descrição do Projeto
-Criada aplicação para gerenciar Tarefas, aonde será permitido a criação de usuário e realizando o CRUD de <i>todos</i>:
+Projeto criado para prática e estudos durante o curso Ignite na Trilha NodeJS da Rocketseat.
+Aonde teriamos que criar uma aplicação para gerenciar Tarefas, aonde será permitido a criação de usuário e realizando o CRUD de <i>todos</i>:
+
  * Criar um novo todo;
  * Listar todos os <i>todos</i>;
  * Alterar o <b><i>`title`</i></b> e <b><i>`deadline`</i></b> de um todo existente;
  * Marcar um todo como feito;
  * Excluir um <i>todo</i>;
- Projeto criado para prática e estudos durante o curso Ignite na Trilha NodeJS da Rocketseat
-
 
 
 ### 🛠 Tecnologias
@@ -57,3 +57,4 @@ A rota deve receber, pelo header da requisição, uma propriedade `username` con
 ### DELETE `/todos/:id`
 
 A rota deve receber, pelo header da requisição, uma propriedade `username` contendo o username do usuário e excluir o *todo* que possuir um `id` igual ao `id` presente nos parâmetros da rota.
+
