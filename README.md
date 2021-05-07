@@ -7,6 +7,7 @@ Criada aplicação para gerenciar Tarefas, aonde será permitido a criação de 
  * Alterar o <b><i>`title`</i></b> e <b><i>`deadline`</i></b> de um todo existente;
  * Marcar um todo como feito;
  * Excluir um <i>todo</i>;
+ Projeto criado para prática e estudos durante o curso Ignite na Trilha NodeJS da Rocketseat
 
 
 
