@@ -18,7 +18,7 @@ function checksExistsUserAccount(request, response, next) {
   );
 
   if (!user){
-    return response.status(400).json( {error: "Usuário não encontrado"} );
+    return response.status(404).json( {error: "Usuário não encontrado"} );
   }
 
   request.user = user;
@@ -33,7 +33,7 @@ function checksTodoIdExist(request, response, next){
   const todo = user.todos.find( todo => todo.id === id);
 
   if (!todo){
-    return response.status(401).json( {error: "Todo não encontrado"});
+    return response.status(404).json( {error: "Todo não encontrado"});
   }
 
   request.todo = todo;
@@ -59,7 +59,7 @@ app.post('/users', (request, response) => {
     todos: [],
   });
 
-  return response.status(201).json({message: "Conta criada com sucesso!"});
+  return response.status(201).json(users);
 
 });
 
@@ -83,7 +83,7 @@ app.post('/todos', checksExistsUserAccount, (request, response) => {
 
   user.todos.push(newTodo);
 
-  return response.status(201).json({message: "Criado com sucesso!"});
+  return response.status(201).json(newTodo);
 
 });
 
@@ -113,12 +113,12 @@ app.delete('/todos/:id', checksExistsUserAccount, (request, response) => {
   const idTodo = user.todos.findIndex( todo => todo.id === id);
 
   if (idTodo === -1){
-    return response.status(401).json({ error: "Todo não encontrado"});
+    return response.status(404).json({ error: "Todo não encontrado"});
   }
 
   user.todos.splice(idTodo,1);
   
-  return response.status(201).send();
+  return response.status(204).send();
 
 });
 
